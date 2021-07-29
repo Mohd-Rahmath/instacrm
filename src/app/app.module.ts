@@ -15,13 +15,17 @@ import {GoogleLoginProvider,FacebookLoginProvider} from 'angularx-social-login';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { AccountModule } from './account/account.module';
+import { AppLayoutComponent } from './layouts/app-layout/app-layout.component';
+import { SidebarComponent } from './layouts/sidebar/sidebar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     LoginLayoutComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    AppLayoutComponent,
+    SidebarComponent
   ],
   imports: [
     CommonModule,

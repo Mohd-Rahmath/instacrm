@@ -14,21 +14,13 @@ import {SocialUser} from 'angularx-social-login';
 export class DashboardComponent implements OnInit {
 
     HEAD;
-    balance: object;
-    transactions: any;
     referrals: object;
     firstName: string;
-    goldInfo: number;
-    goldPriceCssClass: string;
     roleId: number;
-    walletAmount: number;
-    orgType: number;
 
     constructor(
         private api: ApiService,
         private authenticationService: AuthenticationService,
-        
-        //  private websocketService: WebsocketService,
     ) {
     }
 
@@ -40,21 +32,5 @@ export class DashboardComponent implements OnInit {
         } else {
             this.roleId = user.roleId;
         }
-        this.orgType = user.orgType;
-
-
-        // Once the price is fetched, attach WebSocket
-        /* this.websocketService.subscribe('gold/24/price', data => {
-           this.goldPriceCssClass = 'blink'
-           this.goldInfo['buy_price_per_gram'] = data['buy'];
-           this.goldInfo['sell_price_per_gram'] = data['sell'];
-
-           const that = this
-           setTimeout(function() {
-             that.goldPriceCssClass = ''
-           }, 5000);
-         });*/
-    }
-
-    
+    }    
 }

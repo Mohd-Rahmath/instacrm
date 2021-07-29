@@ -33,7 +33,7 @@ export class AuthenticationService {
         })
             .pipe(map((user: User) => {
                 if (user && user.accessToken) {
-                  //  this.updateAuthUser(user);
+                   this.updateAuthUser(user);
                 }
                 return user;
             }));
@@ -66,11 +66,11 @@ export class AuthenticationService {
 
     setUser(): void {
         const user = this.getUser();
-        if (user && user.role === UserRole.Admin) {
+        /*if (user && user.role === UserRole.Admin) {
             this.isAdmin = true;
         } else {
             this.isStandardUser = true;
-        }
+        } */
     }
 
     forgotPassword(email: string): any {

@@ -1,8 +1,8 @@
-import {Component, HostListener, OnInit} from '@angular/core';
-import {animate, state, style, transition, trigger} from '@angular/animations';
-import {AuthenticationService} from '../../_services/authentication/authentication.service';
-import {Event, NavigationEnd, NavigationError, NavigationStart, Router} from '@angular/router';
-import {ApiService} from '../../api.service';
+import { Component, HostListener, OnInit } from '@angular/core';
+import { animate, state, style, transition, trigger } from '@angular/animations';
+import { AuthenticationService } from '../../_services/authentication/authentication.service';
+import { Event, NavigationEnd, NavigationError, NavigationStart, Router } from '@angular/router';
+import { ApiService } from '../../api.service';
 
 @Component({
     selector: 'app-app-layout',
@@ -10,18 +10,13 @@ import {ApiService} from '../../api.service';
     styleUrls: ['./app-layout.component.scss'],
     animations: [
         trigger('slide', [
-            state('up', style({height: 0})),
-            state('down', style({height: '*'})),
+            state('up', style({ height: 0 })),
+            state('down', style({ height: '*' })),
             transition('up <=> down', animate(200))
         ])
     ],
 })
 export class AppLayoutComponent implements OnInit {
-
-    @HostListener('window:onbeforeunload', ['$event'])
-    clearLocalStorage(event) {
-        localStorage.removeItem('coupon');
-    }
 
     name: string;
     year = (new Date()).getFullYear();
@@ -61,15 +56,7 @@ export class AppLayoutComponent implements OnInit {
 
     ngOnInit(): void {
         const user = this.authenticationService.getUser();
-        console.log('user', user.name);
         this.name = user.name;
-
-        this.roleId = user.roleId;
-        this.getNotifications();
-        // window.onClick = hideNotificationsModal();
-
-        localStorage.removeItem('coupon');
-
     }
 
     logout(): void {
@@ -89,59 +76,6 @@ export class AppLayoutComponent implements OnInit {
 
     onDeactivate(event): void {
 
-    }
-
-    getNotifications() {
-        this.api.get(`notifications?page=${this.page}`)
-            .subscribe((r: any) => {
-                this.notificationsCount = r.notificationsCount;
-                this.list = r.notifications;
-            });
-    }
-
-    showNotificationsModal() {
-        this.getNotifications();
-        this.notificationsModal = true;
-    }
-
-    hideNotificationsModal() {
-        this.notificationsModal = false;
-    }
-
-    notificationType(type: string, id: number) {
-        this.api.get(`notifications/read-one/` + id)
-            .subscribe((r: any) => {
-                switch (type) {
-                    case 'BG':
-                        window.location.href = '/gold/buy';
-                        break;
-                    case 'SG':
-                        window.location.href = '/gold/sell';
-                        break;
-                    case 'TG':
-                        window.location.href = '/gold/transfer';
-                        break;
-                    case 'RG':
-                        window.location.href = '/gold/withdraw';
-                        break;
-                    case 'SL':
-                        window.location.href = '/schemes';
-                        break;
-                    case 'GN':
-                        // no action for this case
-                        this.getNotifications();
-                        break;
-                    default:
-                        // no action for this case
-                        this.getNotifications();
-                        break;
-                }
-            });
-    }
-
-    pageChanged(pageNumber: number) {
-        this.page = pageNumber;
-        this.getNotifications();
     }
 
 }

@@ -10,10 +10,9 @@
             <div class="ml-auto col-lg-5">
                 <ul class="user-nav">
                     <li *ngIf="this.roleId === 1">
-                        <button class="btn btn-light"
-                                (click)="showNotificationsModal()" >
+                        <button class="btn btn-light">
                             <i class="far fa-bell"></i>
-                            <span class="badge">{{ notificationsCount }}</span>
+                            <span class="badge">1</span>
                         </button>
                     </li>
 
@@ -50,12 +49,11 @@
                 </div>
             </div>
         </section>
-
     </section>
 </section>
 
 <!-- notifications modal -->
-<div [style.display]="notificationsModal ? 'block' : 'none'" class="modal not"
+<div class="modal not"
      id="imagemodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 
     <div class="modal-dialog modal-dialog-scrollable" role="document">
@@ -64,33 +62,25 @@
             <div class="modal-header">
                 <h5 class="modal-title" id="myModalLabel">Notifications</h5>
                 <button type="button" class="btn btn-light"
-                        data-dismiss="modal" (click)="hideNotificationsModal()">X
+                        data-dismiss="modal">X
                 </button>
             </div>
 
             <div class="notification-scroll">
 
-                <div class="notifications" *ngFor="let e of list">
-                    <div class="card notification-card" (click)="notificationType(e.type,e.id)">
-                        <div *ngIf="e.isSeen == true" class="card-body">
+                <div class="notifications">
+                    <div class="card notification-card">
+                        <!-- <div *ngIf="e.isSeen == true" class="card-body">
                             <b>{{e?.title}}</b><br>
                             {{e?.message}}
                         </div>
                         <div *ngIf="e.isSeen == false" style="background-color:#edf7fe;" class="card-body">
                             <b>{{e?.title}}</b><br>
                             {{e?.message}}
-                        </div>
+                        </div> -->
                     </div>
                 </div>
-
             </div>
-
-            <!-- <div class="modal-body">
-            </div>  -->
-
-            <!-- <div class="modal-footer">
-            </div> -->
-
         </div>
     </div>
 </div>
