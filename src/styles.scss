@@ -1,0 +1,33 @@
+/* You can add global styles to this file, and also import other style files */
+@import "src/assets/scss/variables";
+// @import "src/assets/scss/theme";
+
+$theme-colors: (
+  "primary": $primary-gold,
+  "danger": #ff0200
+);
+
+@import "~bootstrap";
+// @import "src/assets/scss/pagination";
+
+.btn {
+  font-weight: bold;
+  transition: ease-in all 0.2s;
+}
+
+.btn-primary {
+  color: $bg-sidebar-wrapper;
+
+  i.fas {
+    color: $bg-sidebar-wrapper;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .table th, .table td {
+    padding: 0.3rem;
+    font-size: 8px;
+  }
+ 
+}
+
+/* You can add global styles to this file, and also import other style files */

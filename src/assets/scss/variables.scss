@@ -1,0 +1,35 @@
+//$primary-black: #131f37;
+$primary-black: #1A2E22;
+$primary-gold: #edd368;
+
+$blue-light-text-color: #d5dae4;
+$text-dark-color: $primary-black;
+$text-light-color: rgba(19, 31, 55, 0.43);
+$default-font-size: 14px;
+
+$text-color: $primary-black;
+$primary: $primary-gold;
+
+$link-color: $text-dark-color;
+$sidebar-width: 260px;
+$sidebar-text-color: #c4ced8;
+
+/*------------------------------default theme---------------------------------*/
+$bg-sidebar-wrapper: $primary-black;
+$border-color: #3a3f48;
+$footer-top-border-color: #3a3a3a;
+$color: #bdbdbd;
+$header-menu-color: #6c7b88;
+$hover-color: #ffffff;
+$shadow-color: #131212;
+$bg-scrollbar: #636363;
+$blue-light-color: lighten($primary-black, 10%);
+
+// colors with backgound image
+$img-bg-sidebar-wrapper: rgba(29, 29, 29, 0.8);
+$img-border-color: rgba(255, 255, 255, 0.1);
+$img-bg-footer: rgba(43, 43, 43, 0.5);
+$img-shadow-color: rgba(0, 0, 0, 0.5);
+
+$theme-credit-color: #03b13a;
+$theme-debit-color: #d62727;

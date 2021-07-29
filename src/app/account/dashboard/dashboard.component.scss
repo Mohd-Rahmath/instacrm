@@ -1,0 +1,132 @@
+@import "src/assets/scss/variables";
+
+.dashboard {
+  .intro {
+    margin-bottom: 20px;
+
+    h1 {
+      font-weight: bold;
+      font-size: 2rem;
+      margin-bottom: 0;
+      padding-bottom: 0;
+      line-height: 32px;
+      color: $text-dark-color;
+    }
+
+    small {
+      font-size: 14px;
+      color: $text-light-color;
+      font-weight: bold;
+      margin: 5px 0;
+      display: block;
+    }
+  }
+  .grams{
+    .fas{
+      padding: 5px 20px!important;
+    }
+    h1{
+      font-size: 20px!important;
+    }
+  }
+  .refer{
+    padding: 5px 10px;
+  }
+  .card {
+    .card-header {
+      text-transform: uppercase;
+      font-weight: 600;
+      color: $text-dark-color;
+    }
+
+    .balance-card {
+      //width: 400px;
+
+      h1 {
+        font-size: 2.2rem;
+        line-height: 45px;
+      }
+
+      i {
+        color: $primary-gold;
+        padding: 5px 30px;
+      }
+
+      small {
+        font-size: 14px;
+        color: #777777;
+      }
+
+      h1,
+      small {
+        padding: 0 15px;
+        margin: 0;
+      }
+    }
+  }
+
+  .table {
+    td {
+      span.plus {
+        color: $theme-credit-color;
+      }
+
+      span.minus {
+        color: $theme-debit-color;
+      }
+    }
+  }
+
+  .gold-price {
+    padding-bottom: 10px;
+
+    h5 {
+      font-size: 16px;
+      font-weight: 900;
+      display: block;
+      color: #333333;
+      margin: 0 0 15px 0;
+
+      b {
+        font-size: 16px;
+        color: #333333;
+      }
+    }
+
+    &.blink {
+      h5 {
+        animation: blink 1s linear infinite;
+        color: green;
+      }
+    }
+  }
+
+  @keyframes blink {
+    0% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 0.5;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+}
+@media only screen and (max-width: 767px) {
+  .dashboard {
+    .intro {
+      h1 {
+        font-size: 25px;
+      }
+    }
+    .grams{
+      .fas{
+        padding: 5px 10px!important;
+      }
+      h1{
+        font-size: 28px!important;
+      }
+    }
+  }
+}

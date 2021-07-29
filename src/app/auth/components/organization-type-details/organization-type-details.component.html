@@ -1,0 +1,236 @@
+<section class="organization-types" [formGroup]="organizationTypeDetailForm">
+    <div class="form-group">
+        <label>Org Name</label>
+        <div class="input-group"
+             [ngClass]="{'is-invalid': (submitted && (fd.org_name.errors))}">
+            <div class="input-group-prepend">
+                    <span style="background: whitesmoke;padding: 0 15px;"
+                          class="input-group-text"><i class="fas fa-user"></i></span>
+            </div>
+
+            <input type="text" formControlName="org_name"
+                   class="form-control"
+                   placeholder="Enter your org name"
+                   [ngClass]="{'is-invalid': (submitted && (fd.org_name.errors))}"
+            >
+            <!--<div class="invalid-feedback"-->
+            <!--*ngFor="let e of errors['name']">{{e.toString()}}</div>-->
+        </div>
+        <div class="invalid-feedback" *ngIf="organizationTypeDetailForm.get('org_name').hasError('required')">This
+            field is required
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label>Registered Number</label>
+        <div class="input-group"
+             [ngClass]="{'is-invalid': (submitted && (fd.org_registration_number.errors))}">
+            <div class="input-group-prepend">
+                    <span style="background: whitesmoke;padding: 0 15px;"
+                          class="input-group-text"><i class="fas fa-registered"></i></span>
+            </div>
+
+            <input type="text" formControlName="org_registration_number"
+                   class="form-control"
+                   placeholder="Enter your registration number"
+                   [ngClass]="{'is-invalid': (submitted && (fd.org_registration_number.errors ))}"
+            >
+            <!--<div class="invalid-feedback"-->
+            <!--*ngFor="let e of errors['registration_number']">{{e.toString()}}</div>-->
+        </div>
+
+        <div class="invalid-feedback"
+             *ngIf="organizationTypeDetailForm.get('org_registration_number').hasError('required')">This
+            field is required
+        </div>
+    </div>
+    <div class="form-group">
+        <label>Address</label>
+        <div class="input-group"
+             [ngClass]="{'is-invalid': (submitted && (fd.org_address.errors))}">
+            <div class="input-group-prepend">
+                    <span style="background: whitesmoke;padding: 0 15px;"
+                          class="input-group-text"><i class="fas fa-address-book"></i></span>
+            </div>
+
+            <textarea formControlName="org_address"
+                      class="form-control"
+                      placeholder="Enter your address"
+                      [ngClass]="{'is-invalid': (submitted && (fd.org_address.errors))}"
+            ></textarea>
+            <!--<div class="invalid-feedback"-->
+            <!--*ngFor="let e of errors['address']">{{e.toString()}}</div>-->
+        </div>
+
+        <div class="invalid-feedback" *ngIf="organizationTypeDetailForm.get('org_address').hasError('required')">This
+            field is required
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label>City</label>
+        <div class="input-group"
+             [ngClass]="{'is-invalid': (submitted && (fd.org_city.errors ))}">
+            <div class="input-group-prepend">
+                    <span style="background: whitesmoke;padding: 0 15px;"
+                          class="input-group-text"><i class="fas fa-city"></i></span>
+            </div>
+
+            <input type="text" formControlName="org_city"
+                   class="form-control"
+                   placeholder="Enter your city"
+                   [ngClass]="{'is-invalid': (submitted && (fd.org_city.errors ))}"
+            >
+            <!--<div class="invalid-feedback"-->
+            <!--*ngFor="let e of errors['city']">{{e.toString()}}</div>-->
+        </div>
+        <div class="invalid-feedback" *ngIf="organizationTypeDetailForm.get('org_city').hasError('required')">This
+            field is required
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <label>State</label>
+        <div class="input-group"
+             [ngClass]="{'is-invalid': (submitted && (fd.org_state.errors))}">
+            <div class="input-group-prepend">
+                    <span style="background: whitesmoke;padding: 0 15px;"
+                          class="input-group-text"><i class="fas fa-city"></i></span>
+            </div>
+
+            <input type="text" formControlName="org_state"
+                   class="form-control"
+                   placeholder="Enter your state"
+                   [ngClass]="{'is-invalid': (submitted && (fd.org_state.errors))}"
+            >
+            <!--<div class="invalid-feedback"-->
+            <!--*ngFor="let e of errors['state']">{{e.toString()}}</div>-->
+        </div>
+
+        <div class="invalid-feedback" *ngIf="organizationTypeDetailForm.get('org_state').hasError('required')">This
+            field is required
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label>Zip</label>
+        <div class="input-group"
+             [ngClass]="{'is-invalid': (submitted && (fd.org_zip_code.errors ))}">
+            <div class="input-group-prepend">
+                    <span style="background: whitesmoke;padding: 0 15px;"
+                          class="input-group-text"><i class="fas fa-user"></i></span>
+            </div>
+
+            <input type="text" formControlName="org_zip_code"
+                   class="form-control"
+                   placeholder="Enter your zip"
+                   [ngClass]="{'is-invalid': (submitted && (fd.org_zip_code.errors ))}"
+            >
+            <!--<div class="invalid-feedback"-->
+            <!--*ngFor="let e of errors['zip_code']">{{e.toString()}}</div>-->
+        </div>
+
+        <div class="invalid-feedback" *ngIf="organizationTypeDetailForm.get('org_zip_code').hasError('required')">This
+            field is required
+        </div>
+    </div>
+
+
+    <!--<div class="form-group">-->
+        <!--<label>Org Email</label>-->
+        <!--<div class="input-group"-->
+             <!--[ngClass]="{'is-invalid': (submitted && (fd.org_email.errors ))}">-->
+            <!--<div class="input-group-prepend">-->
+                    <!--<span style="background: whitesmoke;padding: 0 15px;"-->
+                          <!--class="input-group-text"><i class="fas fa-envelope"></i></span>-->
+            <!--</div>-->
+
+            <!--<input type="text" formControlName="org_email"-->
+                   <!--class="form-control"-->
+                   <!--placeholder="Enter your email"-->
+                   <!--[ngClass]="{'is-invalid': (submitted && (fd.org_email.errors ))}"-->
+            <!--&gt;-->
+            <!--&lt;!&ndash;<div class="invalid-feedback"&ndash;&gt;-->
+            <!--&lt;!&ndash;*ngFor="let e of errors['email']">{{e.toString()}}</div>&ndash;&gt;-->
+        <!--</div>-->
+        <!--<div class="invalid-feedback" *ngIf="organizationTypeDetailForm.get('org_email').hasError('required')">This-->
+            <!--field is required-->
+        <!--</div>-->
+    <!--</div>-->
+
+
+    <!--<div class="form-group">-->
+        <!--<label>Org Mobile</label>-->
+        <!--<div class="input-group"-->
+             <!--[ngClass]="{'is-invalid': (submitted && (fd.org_mobile.errors))}">-->
+            <!--<div class="input-group-prepend">-->
+                    <!--<span style="background: whitesmoke;padding: 0 15px;"-->
+                          <!--class="input-group-text"><i class="fas fa-mobile-alt"></i></span>-->
+            <!--</div>-->
+
+            <!--<input type="text" formControlName="org_mobile"-->
+                   <!--class="form-control"-->
+                   <!--placeholder="Enter your mobile"-->
+                   <!--[ngClass]="{'is-invalid': (submitted && (fd.org_mobile.errors ))}"-->
+            <!--&gt;-->
+            <!--&lt;!&ndash;<div class="invalid-feedback"&ndash;&gt;-->
+            <!--&lt;!&ndash;*ngFor="let e of errors['mobile']">{{e.toString()}}</div>&ndash;&gt;-->
+        <!--</div>-->
+
+        <!--<div class="invalid-feedback" *ngIf="organizationTypeDetailForm.get('org_mobile').hasError('required')">This-->
+            <!--field is required-->
+        <!--</div>-->
+    <!--</div>-->
+
+    <div class="form-group">
+        <label>Description</label>
+        <div class="input-group"
+             [ngClass]="{'is-invalid': (submitted && (fd.org_description.errors))}">
+            <div class="input-group-prepend">
+                    <span style="background: whitesmoke;padding: 0 15px;"
+                          class="input-group-text"><i class="fas fa-mobile-alt"></i></span>
+            </div>
+
+            <textarea formControlName="org_description"
+                      class="form-control"
+                      placeholder="Enter your description"
+                      [ngClass]="{'is-invalid': (submitted && (fd.org_description.errors ))}"
+            ></textarea>
+            <!--<div class="invalid-feedback"-->
+            <!--*ngFor="let e of errors['mobile']">{{e.toString()}}</div>-->
+        </div>
+
+        <div class="invalid-feedback" *ngIf="organizationTypeDetailForm.get('org_description').hasError('required')">This
+            field is required
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label>Photo</label>
+        <div class="input-group"
+             [ngClass]="{'is-invalid': (submitted && (fd.photo.errors))}">
+            <!--<div class="input-group-prepend">-->
+                    <!--<span style="background: whitesmoke;padding: 0 15px;"-->
+                          <!--class="input-group-text"><i class="fas fa-mobile-alt"></i></span>-->
+            <!--</div>-->
+
+            <input type="file" formControlName="photo"
+                   class="form-control custom-file-input"
+                   (change)="onUploadPhoto($event)"
+                   [ngClass]="{'is-invalid': (submitted && (fd.photo.errors ))}"
+                   id="photo"
+                   accept="image/*, application/pdf"
+            >
+            <!--<div class="invalid-feedback"-->
+            <!--*ngFor="let e of errors['mobile']">{{e.toString()}}</div>-->
+            <label class="custom-file-label" #labelImport for="photo">{{photoName}}</label>
+        </div>
+
+        <div class="invalid-feedback" *ngIf="organizationTypeDetailForm.get('photo').hasError('required')">This
+            field is required
+        </div>
+    </div>
+
+
+</section>

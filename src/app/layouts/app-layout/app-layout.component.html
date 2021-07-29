@@ -1,0 +1,96 @@
+<section class="d-flex">
+
+    <app-user-sidebar></app-user-sidebar>
+
+    <section class="right-panel">
+        <header>
+            <nav class="col-lg-7">
+
+            </nav>
+            <div class="ml-auto col-lg-5">
+                <ul class="user-nav">
+                    <li *ngIf="this.roleId === 1">
+                        <button class="btn btn-light"
+                                (click)="showNotificationsModal()" >
+                            <i class="far fa-bell"></i>
+                            <span class="badge">{{ notificationsCount }}</span>
+                        </button>
+                    </li>
+
+                    <li>
+                        <button class="btn btn-light" (click)="logout()"><span>Logout </span> <i
+                                class="fas fa-power-off"></i></button>
+                    </li>
+
+                    <li>
+                        <button class="btn btn-light">
+                            <span>{{name}}</span>
+                            <i class="far fa-user"></i>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </header>
+
+        <section class="page">
+            <router-outlet (activate)='onActivate($event)' (deactivate)='onDeactivate($event)'></router-outlet>
+        </section>
+
+
+        <section class="page-loader" *ngIf="pageLoading">
+            <div class="bg"></div>
+            <div class="loader">
+                <div class="duo duo1">
+                    <div class="dot dot-a"></div>
+                    <div class="dot dot-b"></div>
+                </div>
+                <div class="duo duo2">
+                    <div class="dot dot-a"></div>
+                    <div class="dot dot-b"></div>
+                </div>
+            </div>
+        </section>
+
+    </section>
+</section>
+
+<!-- notifications modal -->
+<div [style.display]="notificationsModal ? 'block' : 'none'" class="modal not"
+     id="imagemodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+
+    <div class="modal-dialog modal-dialog-scrollable" role="document">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h5 class="modal-title" id="myModalLabel">Notifications</h5>
+                <button type="button" class="btn btn-light"
+                        data-dismiss="modal" (click)="hideNotificationsModal()">X
+                </button>
+            </div>
+
+            <div class="notification-scroll">
+
+                <div class="notifications" *ngFor="let e of list">
+                    <div class="card notification-card" (click)="notificationType(e.type,e.id)">
+                        <div *ngIf="e.isSeen == true" class="card-body">
+                            <b>{{e?.title}}</b><br>
+                            {{e?.message}}
+                        </div>
+                        <div *ngIf="e.isSeen == false" style="background-color:#edf7fe;" class="card-body">
+                            <b>{{e?.title}}</b><br>
+                            {{e?.message}}
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- <div class="modal-body">
+            </div>  -->
+
+            <!-- <div class="modal-footer">
+            </div> -->
+
+        </div>
+    </div>
+</div>
